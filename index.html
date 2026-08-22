@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+   <meta charset="UTF-8">
+   <meta name="description" content="Portfolio Ahmad Zakkyan Qolbi - Programmer & Web Developer">
+   <meta name="robots" content="index, follow">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!--=============== FAVICON ===============-->
+   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css">
+
+   <!--=============== SWIPER CSS ===============-->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+
+   <title>Portfolio - Ahmad Zakkyan Qolbi</title>
+</head>
+<body>
+
+   <!--==================== HEADER & NAV ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+         <a href="#" class="nav__logo">Ahmad Zakkyan Qolbi</a>
+
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li><a href="#home" class="nav__link active-link">Beranda</a></li>
+               <li><a href="#work" class="nav__link">Karya</a></li>
+               <li><a href="#service" class="nav__link">Layanan</a></li>
+               <li><a href="#skills" class="nav__link">Keahlian</a></li>
+               <li><a href="#contact" class="nav__contact">Hubungi</a></li>
+            </ul>
+
+            <button class="nav__close" id="nav-close" aria-label="Close menu">
+               <i class="ri-close-large-line"></i>
+            </button>
+         </div>
+
+         <div class="nav__actions">
+            <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+               <i class="ri-menu-line"></i>
+            </button>
+         </div>
+      </nav>
+   </header>
+
+   <!--==================== MAIN ====================-->
+   <main class="main">
+
+      <!--==================== HOME SECTION ====================-->
+      <section class="home section" id="home">
+         <div class="home__container container grid">
+            <div class="home__content">
+               <span class="home__subtitle"><i class="ri-code-line"></i> Programmer & System</span>
+               <h1 class="home__title">
+                  Halo, Saya <br>
+                  <span>Ahmad Zakkyan Qolbi</span>
+               </h1>
+               <p class="home__description">
+                  Programmer & System dengan 1 tahun pengalaman dalam pengembangan web, 
+                  jaringan, dan aplikasi e-commerce. Berpengalaman dalam membangun sistem 
+                  yang scalable dan siap menghadapi tantangan digital.
+               </p>
+               <a href="#contact" class="home__button button">Hubungi Saya</a>
+            </div>
+
+            <div class="home__image">
+               <img src="assets/img/home-img.png" alt="Ahmad Zakkyan Qolbi" class="home__img">
+               <div class="home__blob"></div>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== ABOUT SECTION ====================-->
+      <section class="about section" id="about">
+         <div class="about__container container grid">
+            <div class="about__content">
+               <h2 class="about__title">
+                  Tentang Saya: Programmer & System dengan <span>1 tahun pengalaman</span> 
+                  dalam <span>pengembangan web</span> dan <span>sistem</span>, 
+                  bersemangat dengan teknologi, disiplin, dan termotivasi untuk 
+                  terus belajar dan berkembang.
+               </h2>
+               <p class="about__description">
+                  Saya telah bekerja pada berbagai proyek mulai dari pengembangan aplikasi 
+                  e-commerce, sistem kasir terintegrasi, hingga infrastruktur jaringan. 
+                  Dengan pengalaman 1 tahun sebagai Programmer & System, saya siap membantu 
+                  mewujudkan ide Anda menjadi solusi digital yang nyata dan berkualitas.
+               </p>
+               <a href="#contact" class="about__button button">Hubungi Saya</a>
+            </div>
+
+            <div class="about__image">
+               <img src="assets/img/home-img.png" alt="Tentang Zakkyan" class="about__img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Ccircle cx=%22150%22 cy=%22150%22 r=%22140%22 fill=%22%237C3AED%22 opacity=%220.12%22/%3E%3Ctext x=%22150%22 y=%22170%22 text-anchor=%22middle%22 font-size=%2260%22 font-family=%22Inter%22 fill=%22%237C3AED%22%3E👨‍💻%3C/text%3E%3C/svg%3E'">
+               <div class="about__blob"></div>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== WORK SECTION ====================-->
+      <section class="work section" id="work">
+         <h2 class="section__title">Lihat <span>Karya</span> Saya</h2>
+
+         <div class="work__container container grid">
+            <article class="work__card">
+               <div class="work__info">
+                  <span class="work__number">01</span>
+                  <h3 class="work__name">Website E-commerce</h3>
+                  <p class="work__description">Aplikasi e-commerce berbasis web untuk CV. BOMBAY GROUP dengan fitur lengkap.</p>
+               </div>
+               <img src="assets/img/work-img-2.jpeg" alt="E-commerce" class="work__img" onerror="this.src='https://via.placeholder.com/400x250/6C63FF/fff?text=E-commerce'">
+            </article>
+
+            <article class="work__card">
+               <div class="work__info">
+                  <span class="work__number">02</span>
+                  <h3 class="work__name">Aplikasi Kasir Web</h3>
+                  <p class="work__description">Aplikasi kasir terintegrasi dengan accounting untuk transaksi dan pencatatan keuangan.</p>
+               </div>
+               <img src="assets/img/work-img-1.jpeg" alt="Kasir" class="work__img" onerror="this.src='https://via.placeholder.com/400x250/6C63FF/fff?text=Aplikasi+Kasir'">
+            </article>
+
+            <article class="work__card">
+               <div class="work__info">
+                  <span class="work__number">03</span>
+                  <h3 class="work__name">Pelayanan Surat Online</h3>
+                  <p class="work__description">Aplikasi berbasis web untuk pelayanan surat di Kelurahan Ngemplak Boyolali.</p>
+               </div>
+               <img src="assets/img/work-img-3.jpeg" alt="Surat Online" class="work__img" onerror="this.src='https://via.placeholder.com/400x250/6C63FF/fff?text=Surat+Online'">
+            </article>
+
+            <article class="work__card">
+               <div class="work__info">
+                  <span class="work__number">04</span>
+                  <h3 class="work__name">Sistem Keuangan BUMDes</h3>
+                  <p class="work__description">Aplikasi sistem keuangan terintegrasi untuk pengelolaan keuangan BUMDes secara digital dan transparan.</p>
+               </div>
+               <img src="assets/img/work-img-4.jpeg" alt="Sistem Keuangan BUMDes" class="work__img" onerror="this.src='https://via.placeholder.com/400x250/6C63FF/fff?text=Sistem+Keuangan+BUMDes'">
+            </article>
+
+            <article class="work__card">
+               <div class="work__info">
+                  <span class="work__number">05</span>
+                  <h3 class="work__name">Sistem Peminjaman Ruang</h3>
+                  <p class="work__description">Aplikasi berbasis web untuk manajemen peminjaman ruangan dengan fitur jadwal, notifikasi, dan persetujuan otomatis.</p>
+               </div>
+               <img src="assets/img/work-img-5.jpeg" alt="Sistem Peminjaman Ruang" class="work__img" onerror="this.src='https://via.placeholder.com/400x250/6C63FF/fff?text=Sistem+Peminjaman+Ruang'">
+            </article>
+         </div>
+      </section>
+
+      <!--==================== SERVICES SECTION ====================-->
+      <section class="services section" id="service">
+         <h2 class="section__title"><span>Layanan</span> Saya</h2>
+
+         <div class="services__container container grid">
+            <div class="services__card">
+               <div class="services__content">
+                  <h3 class="services__name">Pengembang Website</h3>
+                  <p class="services__description">
+                     Layanan yang saya tawarkan kepada perusahaan dan klien melibatkan pengerjaan 
+                     proyek profesional dan berkualitas tinggi, melakukan apa yang paling saya minati.
+                  </p>
+               </div>
+               <button class="services__button" aria-label="Toggle layanan">
+                  <i class="ri-arrow-down-s-line"></i>
+               </button>
+               <div class="services__info">
+                  <ul>
+                     <li>Pengembangan Web</li>
+                     <li>Optimasi Kinerja</li>
+                     <li>Database</li>
+                     <li>SEO Dasar</li>
+                     <li>Desain Responsif</li>
+                  </ul>
+               </div>
+            </div>
+
+            <div class="services__card">
+               <div class="services__content">
+                  <h3 class="services__name">Pengembang Backend</h3>
+                  <p class="services__description">
+                     Saya membangun sistem backend yang kuat dan skalabel menggunakan Laravel, 
+                     PHP, dan MySQL untuk mendukung aplikasi web yang tangguh.
+                  </p>
+               </div>
+               <button class="services__button" aria-label="Toggle layanan">
+                  <i class="ri-arrow-down-s-line"></i>
+               </button>
+               <div class="services__info">
+                  <ul>
+                     <li>Pengembangan API</li>
+                     <li>Desain Database</li>
+                     <li>Autentikasi</li>
+                     <li>Optimasi Kinerja</li>
+                     <li>Keamanan</li>
+                  </ul>
+               </div>
+            </div>
+
+            <div class="services__card">
+               <div class="services__content">
+                  <h3 class="services__name">Desainer Web</h3>
+                  <p class="services__description">
+                     Desain web kreatif dengan fokus pada pengalaman pengguna, menggunakan 
+                     Figma dan prinsip desain modern.
+                  </p>
+               </div>
+               <button class="services__button" aria-label="Toggle layanan">
+                  <i class="ri-arrow-down-s-line"></i>
+               </button>
+               <div class="services__info">
+                  <ul>
+                     <li>Desain UI/UX</li>
+                     <li>Prototyping</li>
+                     <li>Desain Visual</li>
+                     <li>Desain Responsif</li>
+                     <li>Wireframing</li>
+                  </ul>
+               </div>
+            </div>
+
+            <div class="services__card">
+               <div class="services__content">
+                  <h3 class="services__name">Spesialis SEO</h3>
+                  <p class="services__description">
+                     Optimalkan website untuk mesin pencari guna meningkatkan visibilitas 
+                     dan mendorong lalu lintas organik.
+                  </p>
+               </div>
+               <button class="services__button" aria-label="Toggle layanan">
+                  <i class="ri-arrow-down-s-line"></i>
+               </button>
+               <div class="services__info">
+                  <ul>
+                     <li>Riset Keyword</li>
+                     <li>On-page SEO</li>
+                     <li>Technical SEO</li>
+                     <li>Optimasi Konten</li>
+                     <li>Analitik</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== SKILLS SECTION ====================-->
+      <section class="skills section" id="skills">
+         <h2 class="section__title"><span>Keahlian</span> Saya</h2>
+
+         <div class="skills__container container grid">
+            <div class="skills__description">
+               <p>Keahlian saya adalah yang telah saya pelajari dan kembangkan selama bertahun-tahun. Dengan belajar, fokus, dan konsisten pada apa yang paling saya cintai.</p>
+            </div>
+
+            <div class="skills__content grid">
+               <!-- Frontend -->
+               <div class="skills__group">
+                  <h3 class="skills__title">Frontend</h3>
+                  <div class="skills__items">
+                     <div class="skills__item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" style="width:40px; height:40px;">
+                        <span>HTML</span>
+                     </div>
+                     <div class="skills__item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" style="width:40px; height:40px;">
+                        <span>CSS</span>
+                     </div>
+                     <div class="skills__item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" style="width:40px; height:40px;">
+                        <span>JavaScript</span>
+                     </div>
+                     <div class="skills__item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" style="width:40px; height:40px;">
+                        <span>React</span>
+                     </div>
+                     <div class="skills__item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" alt="Sass" style="width:40px; height:40px;">
+                        <span>Sass</span>
+                     </div>
+                     <div class="skills__item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" style="width:40px; height:40px;">
+                        <span>Git</span>
+                     </div>
+                     <div class="skills__item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" style="width:40px; height:40px;">
+                        <span>Tailwind</span>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Backend -->
+               <div class="skills__group">
+                  <h3 class="skills__title">Backend</h3>
+                  <div class="skills__items">
+                     <div class="skills__item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" style="width:40px; height:40px;">
+                        <span>Laravel</span>
+                     </div>
+                     <div class="skills__item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" style="width:40px; height:40px;">
+                        <span>PostgreSQL</span>
+                     </div>
+                     <div class="skills__item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" style="width:40px; height:40px;">
+                        <span>Node Js</span>
+                     </div>
+                     <div class="skills__item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase" style="width:40px; height:40px;">
+                        <span>Supabase</span>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Design -->
+               <div class="skills__group">
+                  <h3 class="skills__title">Desain</h3>
+                  <div class="skills__items">
+                     <div class="skills__item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" style="width:40px; height:40px;">
+                        <span>Figma</span>
+                     </div>
+                     <div class="skills__item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" alt="Photoshop" style="width:40px; height:40px;">
+                        <span>Photoshop</span>
+                     </div>
+                     <div class="skills__item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-original.svg" alt="Illustrator" style="width:40px; height:40px;">
+                        <span>Illustrator</span>
+                     </div>
+                     <div class="skills__item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg" alt="After Effects" style="width:40px; height:40px;">
+                        <span>After Effects</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== CONTACT SECTION ====================-->
+      <section class="contact section" id="contact">
+         <h2 class="section__title">Hubungi <span>Saya</span></h2>
+
+         <div class="contact__container container grid">
+            <form class="contact__form" id="contact-form">
+               <div class="contact__group">
+                  <div class="contact__box">
+                     <label for="user_name" class="contact__label">Nama</label>
+                     <input type="text" id="user_name" name="user_name" placeholder="Nama Anda" required>
+                  </div>
+                  <div class="contact__box">
+                     <label for="user_email" class="contact__label">Email</label>
+                     <input type="email" id="user_email" name="user_email" placeholder="Email Anda" required>
+                  </div>
+               </div>
+               <div class="contact__box">
+                  <label for="user_message" class="contact__label">Pesan</label>
+                  <textarea id="user_message" name="user_message" rows="6" placeholder="Pesan Anda" required></textarea>
+               </div>
+               <button type="submit" class="contact__button button" id="submit-btn">
+                  <i class="ri-send-plane-fill"></i> Kirim Pesan
+               </button>
+               
+               <!-- Tempat pesan notifikasi -->
+               <div id="form-message" style="display:none; padding:12px 16px; border-radius:12px; font-weight:500; margin-top:8px;"></div>
+            </form>
+
+            <div class="contact__info">
+               <div class="contact__item">
+                  <h3 class="contact__title">Email</h3>
+                  <a href="mailto:ahmadzakkyanqolbi@gmail.com" class="contact__address">
+                     <i class="ri-mail-line"></i> ahmadzakkyanqolbi@gmail.com
+                  </a>
+               </div>
+               <div class="contact__item">
+                  <h3 class="contact__title">Telepon</h3>
+                  <a href="tel:+6288216537636" class="contact__address">
+                     <i class="ri-phone-line"></i> +62 882-1653-7636
+                  </a>
+               </div>
+               <div class="contact__item">
+                  <h3 class="contact__title">WhatsApp</h3>
+                  <a href="https://wa.me/6288216537636" target="_blank" class="contact__address">
+                     <i class="ri-whatsapp-line"></i> +62 882-1653-7636
+                  </a>
+               </div>
+               <div class="contact__item">
+                  <h3 class="contact__title">Lokasi</h3>
+                  <a href="https://maps.app.goo.gl/DcjYxRjxrkb3DHTo9" target="_blank" class="contact__address">
+                     <i class="ri-map-pin-line"></i> Surakarta, Jawa Tengah
+                  </a>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <!--==================== FOOTER ====================-->
+   <footer class="footer">
+      <div class="footer__container container grid">
+         <div class="footer__content">
+            <h2 class="footer__title">
+               Ada proyek atau ide? <span>Hubungi saya</span>, kita bahas bareng!
+            </h2>
+         </div>
+
+         <div class="footer__links">
+            <a href="#work" class="footer__link">Karya</a>
+            <a href="#service" class="footer__link">Layanan</a>
+            <a href="#skills" class="footer__link">Keahlian</a>
+         </div>
+
+         <div class="footer__social">
+            <a href="https://www.linkedin.com/in/ahmad-zakkyan-qolbi-569679312/" target="_blank" class="footer__social-link" title="LinkedIn">
+               <i class="ri-linkedin-box-fill"></i>
+            </a>
+            <a href="https://github.com/AhmadZakkyanQolbi" target="_blank" class="footer__social-link" title="GitHub">
+               <i class="ri-github-fill"></i>
+            </a>
+            <a href="https://www.instagram.com/a__zakyy" target="_blank" class="footer__social-link" title="Instagram">
+               <i class="ri-instagram-fill"></i>
+            </a>
+            <a href="https://wa.me/6288216537636" target="_blank" class="footer__social-link" title="WhatsApp">
+               <i class="ri-whatsapp-fill"></i>
+            </a>
+         </div>
+
+         <p class="footer__copy">
+            &copy; All Rights Reserved By Ahmad Zakkyan Qolbi
+         </p>
+      </div>
+   </footer>
+
+   <!--========== SCROLL UP ==========-->
+   <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-line"></i>
+   </a>
+
+   <!--=============== SCROLLREVEAL ===============-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
+
+   <!--=============== TYPED JS ===============-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+
+   <!--=============== SWIPER JS ===============-->
+   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+   <!--=============== EMAIL JS ===============-->
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+   <!--=============== MAIN JS ===============-->
+   <script src="assets/js/main.js"></script>
+
+   <div class="cursor"></div>
+</body>
+</html>
