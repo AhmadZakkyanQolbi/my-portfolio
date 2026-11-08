@@ -22,6 +22,9 @@
 </head>
 <body>
 
+   <!--==================== THREE.JS BACKGROUND CANVAS ====================-->
+   <canvas id="three-canvas"></canvas>
+
    <!--==================== HEADER & NAV ====================-->
    <header class="header" id="header">
       <nav class="nav container">
@@ -30,7 +33,7 @@
          <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
                <li><a href="#home" class="nav__link active-link">Beranda</a></li>
-               <li><a href="#experience" class="nav__link">Pengalaman</a></li> <!-- TAMBAHKAN INI -->
+               <li><a href="#experience" class="nav__link">Pengalaman</a></li>
                <li><a href="#work" class="nav__link">Karya</a></li>
                <li><a href="#service" class="nav__link">Layanan</a></li>
                <li><a href="#skills" class="nav__link">Keahlian</a></li>
@@ -67,7 +70,7 @@
                   jaringan, dan aplikasi e-commerce. Berpengalaman dalam membangun sistem 
                   yang scalable dan siap menghadapi tantangan digital.
                </p>
-               <a href="#contact" class="home__button button">Hubungi Saya</a>
+               <a href="#contact" class="home__button button js-magnetic">Hubungi Saya</a>
             </div>
 
             <div class="home__image">
@@ -75,6 +78,9 @@
                <div class="home__blob"></div>
             </div>
          </div>
+
+         <!-- Scroll indicator -->
+         <div class="scroll-indicator" aria-hidden="true"></div>
       </section>
 
       <!--==================== ABOUT SECTION ====================-->
@@ -93,7 +99,7 @@
                   Dengan pengalaman 1 tahun sebagai Programmer & System, saya siap membantu 
                   mewujudkan ide Anda menjadi solusi digital yang nyata dan berkualitas.
                </p>
-               <a href="#contact" class="about__button button">Hubungi Saya</a>
+               <a href="#contact" class="about__button button js-magnetic">Hubungi Saya</a>
             </div>
 
             <div class="about__image">
@@ -103,12 +109,12 @@
          </div>
       </section>
 
-            <!--==================== WORK SECTION ====================-->
+      <!--==================== WORK SECTION ====================-->
       <section class="work section" id="work">
          <h2 class="section__title">Lihat <span>Karya</span> Saya</h2>
 
          <div class="work__container container grid">
-            <article class="work__card">
+            <article class="work__card js-tilt">
                <div class="work__info">
                   <span class="work__number">01</span>
                   <h3 class="work__name">Website E-commerce</h3>
@@ -117,7 +123,7 @@
                <img src="assets/img/work-img-2.jpeg" alt="E-commerce" class="work__img" onerror="this.src='https://via.placeholder.com/400x250/6C63FF/fff?text=E-commerce'">
             </article>
 
-            <article class="work__card">
+            <article class="work__card js-tilt">
                <div class="work__info">
                   <span class="work__number">02</span>
                   <h3 class="work__name">Aplikasi Kasir Web</h3>
@@ -126,7 +132,7 @@
                <img src="assets/img/work-img-1.jpeg" alt="Kasir" class="work__img" onerror="this.src='https://via.placeholder.com/400x250/6C63FF/fff?text=Aplikasi+Kasir'">
             </article>
 
-            <article class="work__card">
+            <article class="work__card js-tilt">
                <div class="work__info">
                   <span class="work__number">03</span>
                   <h3 class="work__name">Pelayanan Surat Online</h3>
@@ -135,7 +141,7 @@
                <img src="assets/img/work-img-3.jpeg" alt="Surat Online" class="work__img" onerror="this.src='https://via.placeholder.com/400x250/6C63FF/fff?text=Surat+Online'">
             </article>
 
-            <article class="work__card">
+            <article class="work__card js-tilt">
                <div class="work__info">
                   <span class="work__number">04</span>
                   <h3 class="work__name">Sistem Keuangan BUMDes</h3>
@@ -144,7 +150,7 @@
                <img src="assets/img/work-img-4.jpeg" alt="Sistem Keuangan BUMDes" class="work__img" onerror="this.src='https://via.placeholder.com/400x250/6C63FF/fff?text=Sistem+Keuangan+BUMDes'">
             </article>
 
-            <article class="work__card">
+            <article class="work__card js-tilt">
                <div class="work__info">
                   <span class="work__number">05</span>
                   <h3 class="work__name">Sistem Peminjaman Ruang</h3>
@@ -153,8 +159,7 @@
                <img src="assets/img/work-img-5.jpeg" alt="Sistem Peminjaman Ruang" class="work__img" onerror="this.src='https://via.placeholder.com/400x250/6C63FF/fff?text=Sistem+Peminjaman+Ruang'">
             </article>
 
-            <!-- ===== KARYA BARU (NOMOR 06) ===== -->
-            <article class="work__card">
+            <article class="work__card js-tilt">
                <div class="work__info">
                   <span class="work__number">06</span>
                   <h3 class="work__name">Web Internal Perusahaan</h3>
@@ -162,7 +167,6 @@
                </div>
                <img src="assets/img/work-img-6.jpeg" alt="Web Internal Perusahaan" class="work__img" onerror="this.src='https://via.placeholder.com/400x250/6C63FF/fff?text=Web+Internal+Perusahaan'">
             </article>
-
          </div>
       </section>
 
@@ -261,7 +265,7 @@
          </div>
       </section>
 
-     <!--==================== EXPERIENCE SECTION ====================-->
+      <!--==================== EXPERIENCE SECTION ====================-->
       <section class="experience section" id="experience">
          <div class="container">
             <div class="section-title">
@@ -270,7 +274,6 @@
                <p>Perjalanan profesional dan pengembangan diri saya</p>
             </div>
 
-            <!-- ===== GRID PENGALAMAN ===== -->
             <div class="experience__grid">
 
                <!-- ===== PENGALAMAN KERJA ===== -->
@@ -279,8 +282,7 @@
                      <i class="ri-briefcase-line"></i> Pengalaman Kerja
                   </h3>
 
-                  <!-- Item 1 - Programmer System -->
-                  <div class="experience__item">
+                  <div class="experience__item js-tilt">
                      <div class="experience__header">
                         <div class="experience__icon">
                            <i class="ri-code-s-slash-line"></i>
@@ -298,8 +300,7 @@
                      </ul>
                   </div>
 
-                  <!-- Item 2 - Experience Consultant -->
-                  <div class="experience__item">
+                  <div class="experience__item js-tilt">
                      <div class="experience__header">
                         <div class="experience__icon">
                            <i class="ri-service-line"></i>
@@ -325,8 +326,7 @@
                      <i class="ri-graduation-cap-line"></i> Magang
                   </h3>
 
-                  <!-- Item 3 - KKN-T -->
-                  <div class="experience__item">
+                  <div class="experience__item js-tilt">
                      <div class="experience__header">
                         <div class="experience__icon">
                            <i class="ri-code-line"></i>
@@ -344,8 +344,7 @@
                      </ul>
                   </div>
 
-                  <!-- Item 4 - Teknisi Jaringan -->
-                  <div class="experience__item">
+                  <div class="experience__item js-tilt">
                      <div class="experience__header">
                         <div class="experience__icon">
                            <i class="ri-wifi-line"></i>
@@ -363,18 +362,16 @@
                      </ul>
                   </div>
                </div>
-
             </div>
 
-            <!-- ===== PELATIHAN & KURSUS - DI TENGAH DENGAN IKON ===== -->
+            <!-- ===== PELATIHAN & KURSUS ===== -->
             <div class="experience__certificates">
                <h3 class="experience__certificates-title">
                   <i class="ri-file-certificate-line"></i> Pelatihan & Kursus
                </h3>
 
                <div class="experience__certificates-grid">
-                  <!-- Sertifikat 1 -->
-                  <div class="experience__certificate-item">
+                  <div class="experience__certificate-item js-tilt">
                      <div class="experience__certificate-icon">
                         <i class="ri-leaf-line"></i>
                      </div>
@@ -385,8 +382,7 @@
                      </div>
                   </div>
 
-                  <!-- Sertifikat 2 -->
-                  <div class="experience__certificate-item">
+                  <div class="experience__certificate-item js-tilt">
                      <div class="experience__certificate-icon">
                         <i class="ri-pencil-ruler-2-line"></i>
                      </div>
@@ -398,7 +394,6 @@
                   </div>
                </div>
             </div>
-
          </div>
       </section>
 
@@ -516,7 +511,7 @@
                   <label for="user_message" class="contact__label">Pesan</label>
                   <textarea id="user_message" name="user_message" rows="6" placeholder="Pesan Anda" required></textarea>
                </div>
-               <button type="submit" class="contact__button button" id="submit-btn">
+               <button type="submit" class="contact__button button js-magnetic" id="submit-btn">
                   <i class="ri-send-plane-fill"></i> Kirim Pesan
                </button>
                
@@ -606,6 +601,10 @@
 
    <!--=============== EMAIL JS ===============-->
    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+   <!--=============== THREE.JS (VERSI 0.149.0) ===============-->
+   <script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+   <script src="assets/js/three-bg.js"></script>
 
    <!--=============== MAIN JS ===============-->
    <script src="assets/js/main.js"></script>

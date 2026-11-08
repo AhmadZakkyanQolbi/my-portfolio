@@ -204,17 +204,28 @@ img {
 /*=============== BUTTON ===============*/
 .button {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   background-color: var(--first-color);
   color: var(--black-color);
   padding: 1rem 2.5rem;
   border-radius: 4rem;
   font-weight: var(--font-semi-bold);
   transition: box-shadow 0.4s, transform 0.3s, color 0.3s;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+      90deg,
+      var(--first-color) 0%,
+      hsl(var(--hue), 90%, 75%) 50%,
+      var(--first-color) 100%
+  );
 }
 
 .button:hover {
   box-shadow: 0 8px 32px hsla(var(--hue), 80%, 65%, 0.4);
   transform: scale(1.05);
+  animation: shimmer 2s linear infinite;
 }
 
 body.light-theme .button {
@@ -498,6 +509,7 @@ body.light-theme .nav__close {
   position: relative;
   z-index: 1;
   object-fit: cover;
+  animation: floatSmooth 8s ease-in-out infinite; /* Update premium float */
 }
 
 .home__blob {
@@ -510,6 +522,7 @@ body.light-theme .nav__close {
   left: -20px;
   opacity: 0.15;
   z-index: 0;
+  animation: pulseBlob 6s ease-in-out infinite;
 }
 
 .home__blob-small {
@@ -602,6 +615,7 @@ body.light-theme .home__text {
   left: -15px;
   opacity: 0.1;
   z-index: 0;
+  animation: pulseBlob 6s ease-in-out infinite;
 }
 
 /*=============== WORK SECTION ===============*/
@@ -664,7 +678,7 @@ body.light-theme .work {
   background: var(--border-color);
 }
 
-/*=============== SERVICES SECTION - FIXED ACCORDION ===============*/
+/*=============== SERVICES SECTION ===============*/
 .services {
   background-color: var(--body-color);
   transition: background-color var(--transition);
@@ -833,7 +847,6 @@ body.light-theme .services__info li:hover {
   background: hsla(var(--hue), 80%, 65%, 0.12);
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 540px) {
   .services__container {
     grid-template-columns: 1fr;
@@ -894,11 +907,14 @@ body.light-theme .skills {
   padding: 0.5rem;
   border-radius: 0.75rem;
   transition: transform 0.3s, background 0.3s;
+  opacity: 0; /* Untuk animasi pop-in */
+  transform: translateY(20px);
 }
 
 .skills__item:hover {
   transform: translateY(-4px);
   background: hsla(var(--hue), 80%, 65%, 0.05);
+  animation: bounce 0.6s ease;
 }
 
 .skills__item img {
@@ -965,7 +981,6 @@ body.light-theme .skills {
   object-fit: cover;
 }
 
-/* Swiper */
 .swiper-wrapper {
   padding: 0.5rem 0;
 }
@@ -1109,11 +1124,12 @@ body.light-theme .contact__button {
   padding: 1.5rem;
   border-radius: 16px;
   border: 1px solid var(--border-color);
-  transition: border-color 0.3s, background var(--transition);
+  transition: border-color 0.3s, background var(--transition), transform 0.3s;
 }
 
 .contact__item:hover {
   border-color: var(--first-color);
+  transform: translateX(6px);
 }
 
 .contact__title {
@@ -1146,12 +1162,10 @@ body.light-theme .contact__address {
   flex-shrink: 0;
 }
 
-/* ===== FORM MESSAGE ===== */
 #form-message {
   transition: all 0.3s ease;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (width >= 768px) {
   .contact__container {
     grid-template-columns: 1fr 1fr;
@@ -1281,7 +1295,6 @@ body.light-theme .scrollup {
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* For medium devices */
 @media (width >= 540px) {
   .nav__menu {
     width: 50%;
@@ -1305,7 +1318,6 @@ body.light-theme .scrollup {
   }
 }
 
-/* For large devices */
 @media (width >= 768px) {
   .home__container {
     grid-template-columns: 1fr 1fr;
@@ -1442,7 +1454,6 @@ body.light-theme .scrollup {
   }
 }
 
-/* For 2K resolutions */
 @media (width >= 1400px) {
   .container {
     max-width: 1300px;
@@ -1460,7 +1471,6 @@ body.light-theme .experience {
   background: var(--body-color);
 }
 
-/* ===== SECTION TITLE ===== */
 .experience .section-title .tag {
   display: inline-block;
   background: rgba(124, 58, 237, 0.1);
@@ -1496,7 +1506,6 @@ body.light-theme .experience .section-title h2 {
   font-size: 1.05rem;
 }
 
-/* ===== GRID ===== */
 .experience__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1504,7 +1513,6 @@ body.light-theme .experience .section-title h2 {
   margin-top: 2rem;
 }
 
-/* ===== CATEGORY TITLE ===== */
 .experience__category-title {
   font-size: 1.4rem;
   font-weight: 700;
@@ -1523,7 +1531,6 @@ body.light-theme .experience__category-title {
   color: var(--first-color);
 }
 
-/* ===== ITEM ===== */
 .experience__item {
   background: var(--body-color);
   padding: 1.5rem;
@@ -1543,7 +1550,6 @@ body.light-theme .experience__item {
   box-shadow: 0 8px 24px var(--shadow-color);
 }
 
-/* ===== HEADER ===== */
 .experience__header {
   display: flex;
   align-items: flex-start;
@@ -1601,7 +1607,6 @@ body.light-theme .experience__info h4 {
   font-size: 0.7rem;
 }
 
-/* ===== DESKRIPSI ===== */
 .experience__description {
   margin-top: 0.8rem;
   padding-left: 0;
@@ -1624,7 +1629,6 @@ body.light-theme .experience__info h4 {
   font-weight: bold;
 }
 
-/* ===== PELATIHAN & KURSUS - DI TENGAH DENGAN IKON ===== */
 .experience__certificates {
   margin-top: 3rem;
   padding-top: 2.5rem;
@@ -1728,7 +1732,6 @@ body.light-theme .experience__certificate-content h4 {
   margin-top: 2px;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
   .experience__grid {
     grid-template-columns: 1fr;
@@ -1778,5 +1781,369 @@ body.light-theme .experience__certificate-content h4 {
     width: 44px;
     height: 44px;
     font-size: 1.3rem;
+  }
+}
+
+/*==================================================*/
+/*=============== THREE.JS BACKGROUND ===============*/
+/*==================================================*/
+#three-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+
+body.light-theme #three-canvas {
+  opacity: 0.35;
+}
+
+/* Pastikan section transparan agar canvas terlihat */
+.home,
+.about,
+.work,
+.services,
+.skills,
+.experience,
+.contact {
+  position: relative;
+  background-color: transparent !important;
+}
+
+/* Section dengan latar semi transparan + blur untuk readability */
+.work,
+.skills,
+.experience {
+  background-color: hsla(var(--hue), 12%, 4%, 0.55) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+body.light-theme .work,
+body.light-theme .skills,
+body.light-theme .experience {
+  background-color: hsla(var(--hue), 24%, 96%, 0.55) !important;
+}
+
+/* Pastikan main tidak menutupi canvas */
+.main {
+  background-color: transparent;
+}
+
+/*=============================================*/
+/*=============== ANIMATIONS ==================*/
+/*=============================================*/
+
+/* Float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Smooth float for image */
+@keyframes floatSmooth {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(2deg); }
+  75% { transform: translateY(10px) rotate(-2deg); }
+}
+
+/* Shimmer gradient */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Pulse blob */
+@keyframes pulseBlob {
+  0%, 100% { transform: scale(1); opacity: 0.15; }
+  50% { transform: scale(1.1); opacity: 0.25; }
+}
+
+/* Scroll down indicator */
+@keyframes scrollDown {
+  0% { transform: translateY(-10px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
+}
+
+/* Shimmer line under section title */
+@keyframes shimmerLine {
+  0%, 100% { opacity: 0.3; transform: scaleX(0.5); }
+  50% { opacity: 1; transform: scaleX(1); }
+}
+
+/* Bounce untuk skill item */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-8px); }
+  60% { transform: translateY(-3px); }
+}
+
+/* Pop in untuk skill icon */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+  }
+  70% {
+    transform: scale(1.1) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Spin untuk tombol scroll up */
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Section title neon underline */
+.section__title span {
+  position: relative;
+  display: inline-block;
+}
+
+.section__title span::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--first-color), transparent);
+  animation: shimmerLine 3s ease-in-out infinite;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.6;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.scroll-indicator::before {
+  content: '';
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--first-color), transparent);
+  animation: scrollDown 2s ease-in-out infinite;
+}
+
+/*=============================================*/
+/*=============== PREMIUM HOVER ===============*/
+/*=============================================*/
+
+/* Efek Transisi Halus untuk JS */
+.js-magnetic {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+  will-change: transform;
+}
+
+.js-tilt {
+  transition: transform 0.1s ease, box-shadow 0.3s ease;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efek Cahaya (Glow) Mengikuti Kursor pada Card */
+.js-tilt::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(124, 58, 237, 0.15),
+      transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.js-tilt:hover::before {
+  opacity: 1;
+}
+
+/* Pastikan konten di dalam card di atas glow */
+.js-tilt > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Navbar link underline */
+.nav__link::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--first-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+.nav__link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Scroll up button spin */
+.scrollup:hover {
+  animation: spin 0.5s linear;
+}
+
+/*=========================================*/
+/*=============== RESPONSIVE ==============*/
+/*=========================================*/
+@media (max-width: 768px) {
+  #three-canvas {
+    opacity: 0.3;
+  }
+
+  .home__img {
+    animation: none;
+  }
+
+  .scroll-indicator {
+    bottom: 15px;
+  }
+  
+  /* Fix Responsive 3D di HP */
+  .container {
+    margin-inline: 1rem;
+    width: calc(100% - 2rem);
+  }
+
+  .home, .about, .work, .services, .skills, .experience, .contact {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .home__title {
+    font-size: 2rem;
+    word-wrap: break-word;
+  }
+
+  .home__img {
+    width: 220px;
+  }
+  
+  .home__blob {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .about__img {
+    width: 200px;
+  }
+
+  .about__blob {
+    width: 220px;
+    height: 220px;
+  }
+
+  .home__container,
+  .about__container,
+  .work__container,
+  .services__container,
+  .contact__container,
+  .contact__group,
+  .experience__grid,
+  .experience__certificates-grid,
+  .footer__container {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+
+  .home__content,
+  .about__content {
+    text-align: center;
+  }
+
+  .home__description,
+  .about__description {
+    margin-inline: auto;
+    max-width: 100%;
+  }
+
+  .home__button,
+  .about__button {
+    margin: 0 auto;
+  }
+
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .home__title {
+    font-size: 1.6rem;
+  }
+
+  .section__title {
+    font-size: 1.4rem;
+  }
+
+  .home__description,
+  .about__description {
+    font-size: 0.9rem;
+  }
+
+  .button,
+  .contact__button {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/*=============================================*/
+/*=============== REDUCED MOTION =============*/
+/*=============================================*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  #three-canvas {
+    display: none;
+  }
+
+  .home__img,
+  .home__blob,
+  .about__blob,
+  .scroll-indicator::before,
+  .section__title span::after {
+    animation: none !important;
   }
 }

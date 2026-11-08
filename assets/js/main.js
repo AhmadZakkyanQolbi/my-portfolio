@@ -134,25 +134,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /*=============== CONTACT EMAIL JS ===============*/
-// =====================================================
-// ✅ DATA DARI EMAILJS KAMU (UPDATE!)
-// =====================================================
-// Public Key: y21JsOyeMW2zFFeka  (dari screenshot terbaru)
-// Service ID: service_371twhl
-// Template ID: template_0ob2h51
-// =====================================================
-
 const contactForm = document.getElementById('contact-form');
 const formMessage = document.getElementById('form-message');
 
 if (contactForm) {
-   // ✅ Public Key sudah diganti dengan yang benar!
    const EMAILJS_PUBLIC_KEY = 'y21JsOyeMW2zFFeka';
    const EMAILJS_SERVICE_ID = 'service_371twhl';
-   const EMAILJS_TEMPLATE_ID = 'template_o0b2h51';
-
-   // Debug: cek public key
-   console.log('Public Key yang digunakan:', EMAILJS_PUBLIC_KEY);
+   const EMAILJS_TEMPLATE_ID = 'template_0ob2h51';
 
    emailjs.init({
       publicKey: EMAILJS_PUBLIC_KEY,
@@ -171,16 +159,11 @@ if (contactForm) {
       btn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i> Mengirim...';
       btn.disabled = true;
 
-      console.log('Mengirim ke EmailJS...');
-      console.log('Service ID:', EMAILJS_SERVICE_ID);
-      console.log('Template ID:', EMAILJS_TEMPLATE_ID);
-
       emailjs.sendForm(
          EMAILJS_SERVICE_ID,
          EMAILJS_TEMPLATE_ID,
          this
       ).then(() => {
-         console.log('✅ Email terkirim!');
          btn.innerHTML = '<i class="ri-check-line"></i> Terkirim!';
          btn.style.background = '#22c55e';
          btn.style.color = '#fff';
@@ -311,3 +294,80 @@ sr.reveal('.contact__form', { origin: 'left' });
 sr.reveal('.contact__info', { origin: 'right' });
 sr.reveal('.footer__content', { origin: 'top' });
 sr.reveal('.footer__links, .footer__social, .footer__copy', { origin: 'bottom', interval: 100 });
+
+
+/*=============== PREMIUM ANIMATIONS (BARU) ===============*/
+document.addEventListener('DOMContentLoaded', () => {
+   
+   // 1. MAGNETIC BUTTONS
+   const magneticElements = document.querySelectorAll('.js-magnetic');
+   
+   if (window.innerWidth > 768) {
+      magneticElements.forEach(el => {
+         el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.05)`;
+         });
+         
+         el.addEventListener('mouseleave', () => {
+            el.style.transform = '';
+         });
+      });
+   }
+
+   // 2. 3D TILT CARDS + GLOW
+   const tiltCards = document.querySelectorAll('.js-tilt');
+   
+   if (window.innerWidth > 768) {
+      tiltCards.forEach(card => {
+         card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = ((y - centerY) / centerY) * -10;
+            const rotateY = ((x - centerX) / centerX) * 10;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            
+            // Kirim koordinat mouse untuk efek Glow CSS
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+         });
+         
+         card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+            setTimeout(() => {
+               if (!card.matches(':hover')) {
+                  card.style.transform = '';
+               }
+            }, 300);
+         });
+      });
+   }
+
+   // 3. SKILLS POP-IN STAGGER ANIMATION
+   const skillsSection = document.getElementById('skills');
+   if (skillsSection) {
+      const observer = new IntersectionObserver((entries) => {
+         entries.forEach(entry => {
+            if (entry.isIntersecting) {
+               const items = entry.target.querySelectorAll('.skills__item');
+               items.forEach((item, index) => {
+                  item.style.animation = `popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards`;
+                  item.style.animationDelay = `${index * 0.05}s`;
+               });
+               observer.unobserve(entry.target);
+            }
+         });
+      }, { threshold: 0.1 });
+      
+      observer.observe(skillsSection);
+   }
+});
